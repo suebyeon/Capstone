@@ -1,3 +1,10 @@
+**Notes:**
+- The key is to tie your metrics directly to the business problem you’re solving—how will you know your solution made a difference?
+- outlines the scope and scale of the 'business problem'
+- identify baseline metrics that describe the issue
+- illustrate and estimate the projected benefit of the project to various stakeholders in terms of dollars, impact, and so forth with specific KPIs
+- track and communicate project success.
+
 **Overview & Business Problem:**
 Field service task assignment is currently performed using manual or rule-based processes that do not account for technician expertise, performance history, or task complexity. As a result, assignments are often mismatched, leading to:
 - Failed or delayed task completions
