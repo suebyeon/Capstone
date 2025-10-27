@@ -1,0 +1,39 @@
+before:
+git bash
+uvicorn api_calls:app --reload
+
+to test assign_task api on powershell:
+$body = @{
+    task_distance = 5.2
+    task_priority = 3
+    task_complexity = 7
+    equipment_required = 1
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/assign_task" `
+    -Method POST `
+    -Body $body `
+    -ContentType "application/json"
+
+To test task/{tech id}:
+Invoke-RestMethod -Uri "http://127.0.0.1:8000/tasks/T002" -Method GET
+
+To test adding new task:
+# Create PowerShell object for the task
+$task = @{
+    task_id = "J100"
+    task_distance = 5.5
+    task_priority = 3
+    task_complexity = 7
+    equipment_required = 1
+    customer_rating = 0
+    penalty_cost = 0
+} | ConvertTo-Json
+
+# Send POST request
+$response = Invoke-RestMethod -Uri "http://127.0.0.1:8000/tasks/add" `
+    -Method POST `
+    -Body $task `
+    -ContentType "application/json"
+
+$response
