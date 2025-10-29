@@ -1,0 +1,7 @@
+need CORS
+usestate to store data from backenf
+useeffect and fetcg to call apis
+
+api:
+view unassigned taks
+view list of techinicians
