@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pandas as pd
 import joblib
@@ -21,18 +22,22 @@ class TaskInput(BaseModel):
     task_complexity: int
     equipment_required: int
 
-class NewTask(BaseModel):
-    task_id: str
-    task_distance: float
-    task_priority: int
-    task_complexity: int
-    equipment_required: int
-    customer_rating: float = 0.0
-    penalty_cost: float = 0.0
+class NewTech(BaseModel):
+    tech_id: str
+    eqpt_trained: int
+    tech_complexity: int
 # -----------------------------
 # Initialize FastAPI
 # -----------------------------
 app = FastAPI(title="Task Completion Prediction API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # For dev only, later restrict to specific frontend URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # -----------------------------
 # Define prediction endpoint
@@ -103,17 +108,20 @@ def view_tasks(tech_id: str):
     return tasks.to_dict(orient="records")
 
 # -----------------------------
-# Endpoint: add a new task
+# Endpoint: get list of technicians
 # -----------------------------
-@app.post("/tasks/add")
-def add_task(task: NewTask):
-    global unassigned_tasks
-    unassigned_tasks = pd.concat([unassigned_tasks, pd.DataFrame([task.dict()])], ignore_index=True)
-    return {"message": f"Task {task.task_id} added to unassigned tasks."}
+@app.get("/technicians")
+def get_technicians():
+    df = technician_data.rename(columns={
+    "Technician ID": "tech_id",
+    "Eqpt Trained": "eqpt_trained",
+    "Tech Complexity": "tech_complexity"
+    })
+    return df.to_dict(orient="records")
 
 # -----------------------------
-# Endpoint: view all unassigned tasks
+# Endpoint: get list of unassigned tasks
 # -----------------------------
-@app.get("/tasks/unassigned")
-def view_unassigned_tasks():
-    return "Hello World"
+@app.get("/unassigned_tasks")
+def get_unassigned_tasks():
+    return unassigned_tasks.to_dict(orient="records")
