@@ -1,0 +1,65 @@
+penalty cost visuals:
+2 pie chart:
+- breakdown of cost savings by task priority
+- breakdown of cost savings by task complexity
+
+executive summary:
+- cover page
+- objective/problem statement
+- EDA summary
+- methodology
+- model/deiverable
+- insights
+- benefits
+- limitations & considerations
+- conclusion
+- formal literature search appendix :
+This section should reflect that you’ve done solid background work — enough to show you’ve researched what’s already been done in your area and how your project differentiates itself. It’s essentially your due diligence: understanding comparable studies, tools, or approaches, and clearly identifying where your project adds something new (in data, method, model, or application).
+It doesn’t need to be long, but it should be substantive — more than a few citations. The goal is to show evidence that you’ve reviewed relevant academic research, technical papers, or comparable solutions and can situate your project within that broader context.
+
+
+my response:
+My project is to develop an automated technician task-matching system that uses historical data to predict the likelihood of successful task completion and improve scheduling efficiency.
+I looked into three pieces of research related to technician scheduling:
+1. The Field Technician Scheduling Problem with Experience-Dependent Service Times (MDPI, 2023)
+2. Technician Routing and Scheduling for Tasks with Uncertain Resolution Locations (Technical University of Denmark, 2023)
+3. Enhanced Iterated Local Search for the Technician Routing and Scheduling Problem (arXiv, 2023)
+
+Paper #2 focuses on generating entirely new scheduling scenarios, which is great for companies that want to completely overhaul their systems. In contrast, my project focuses on optimizing what organizations already have—ideal for companies that need incremental improvements and can’t afford to hire more technicians or make major structural changes.
+Papers #1 and #3 introduce advanced optimization algorithms like Iterated Local Search to find the best overall routing and scheduling for technicians. Their main goal is to maximize company efficiency by redesigning full schedules. My approach is different: instead of optimizing the entire schedule, I predict how likely each technician is to successfully complete individual tasks. This allows more flexible and personalized task assignments based on each technician’s history.
+A key difference is that my method focuses more on aligning tasks with the technician’s strengths. This is essentially making their jobs easier and setting them up for success while the other approaches primarily optimize for company outcomes. This technician-centered perspective can indirectly improve overall operational efficiency by boosting task completion rates which would also appeal to the company's goal for cost savings and increasing customer satisfaction.
+
+1. Introduction & Scope
+- Missing: A brief statement about the scope and purpose of your literature search. Add: 2–3 sentences at the start explaining the need for the review and what you set out to learn.
+2. More Substantive Review of Each Paper
+Missing: Brief summaries of each cited paper’s methodology, datasets, and key findings (not just what they focus on). Add: 2–3 sentences per paper on what they did and what they found.
+
+Example:
+
+Paper #1: "This study uses historical service times and technician experience to optimize schedules. The authors employ a mixed-integer programming model and find that incorporating technician experience reduces average service times."
+Paper #2: "Here, the researchers simulate new routing scenarios under uncertain task locations, employing robust optimization to minimize travel and idle time."
+Paper #3: "The authors apply an enhanced iterated local search algorithm, showing improved efficiency in technician routing compared to traditional heuristics."
+
+3. Explicit Statement of Gaps and Differentiation
+You have this, but make it more explicit and concise.
+Example:
+"Unlike previous studies, which either optimize entire schedules or simulate new systems, my project integrates predictive modeling to match technicians to individual tasks based on historical success rates. This technician-focused, data-driven approach aims for incremental improvements and increased job satisfaction, addressing the gap between company-wide efficiency and individual technician performance."
+
+Appendix A: Formal Literature Search
+
+A.1. Introduction
+This appendix reviews recent advances in technician scheduling and task-matching systems. The objective is to identify current approaches, key findings, and how this project’s method differentiates itself by focusing on technician-level predictive matching.
+
+A.2. Search Strategy
+Relevant literature was identified via Google Scholar and IEEE Xplore, using keywords such as "technician scheduling," "task assignment," and "predictive modeling," focusing on works published since 2021.
+
+A.3. Review of Existing Work
+
+Field Technician Scheduling with Experience-Dependent Service Times (MDPI, 2023): Utilizes mixed-integer programming to optimize schedules based on technician experience and historical service times, achieving reduced average service durations.
+Technician Routing and Scheduling for Tasks with Uncertain Resolution Locations (DTU, 2023): Proposes robust optimization for generating new routing scenarios, addressing uncertainty in task locations and aiming to minimize idle and travel time.
+Enhanced Iterated Local Search for the Technician Routing and Scheduling Problem (arXiv, 2023): Applies advanced local search algorithms to technician routing, demonstrating improved schedule efficiency relative to basic heuristics.
+A.4. Differentiation and Contribution
+While prior work focuses on optimizing entire schedules or creating new systems, this project leverages predictive modeling to match individual tasks to technicians based on their historical success rates. This technician-centered approach aims for incremental, practical improvements, bridging the gap between organization-wide efficiency and individual technician performance.
+
+A.5. References
+(Provide full citations here)
